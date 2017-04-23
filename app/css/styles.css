@@ -86,10 +86,10 @@ header.masthead .mh-slider {
   padding-top: 45%;
 }
 #slider .container #carousel-slider .carousel-control .slider-left, #slider .container #carousel-slider .carousel-control .slider-right {
-  background: url(../img/slider.png) no-repeat;
+  background: url(../img/chevrons-circle.png) no-repeat;
   display: block;
-  width: 89px;
-  height: 67px;
+  width: 50px;
+  height: 50px;
   -webkit-transition: all 0.25s ease-in-out;
   -o-transition: all 0.25s ease-in-out;
   -moz-transition: all 0.25s ease-in-out;
@@ -99,7 +99,7 @@ header.masthead .mh-slider {
   background-position: 0 0;
 }
 #slider .container #carousel-slider .carousel-control .slider-right {
-  background-position: -200px 0;
+  background-position: -50px 0;
 }
 #slider .container .btn-group .btn {
   background: none;
