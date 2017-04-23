@@ -76,6 +76,10 @@ var appMaster = {
             pagination:false
         });
 
+        setInterval(function(){ 
+            owl.trigger('owl.next');
+        }, 3000);
+
         $(".owl-next").click(function() {
             owl.trigger('owl.next');
         });
