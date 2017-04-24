@@ -1,4 +1,4 @@
-# LinksApp-Landing-Page
+# LinksApp-Landing-Page (pending Review)
 a landing page for my new iOS app Links
  https://contactform-links.firebaseapp.com
 
