@@ -11,7 +11,7 @@ module.exports = function(grunt) {
 					style: 'expanded'
 				},
 				files: {
-					'app/css/styles.css': 'app/sass/styles.scss'
+					'public/css/styles.css': 'public/sass/styles.scss'
 				}
 			}
 		},
@@ -41,7 +41,7 @@ module.exports = function(grunt) {
 		    },
 		    src: '.',
 		    dest: '#',
-		    exclusions: ['.ftppass', '.git','node_modules','gruntfile.js','package.json','app/sass/**.scss']
+		    exclusions: ['.ftppass', '.git','node_modules','gruntfile.js','package.json','public/sass/**.scss']
 		  }
 		},
 		backup: {
@@ -53,7 +53,7 @@ module.exports = function(grunt) {
 	    watch: {
 	    	options: { livereload: true },
 	      	sass: {
-	        	files: ['app/sass/styles.scss'],
+	        	files: ['public/sass/styles.scss'],
 	        	tasks: ['newer:sass:dist'],
 	      	}
 	    },
@@ -64,7 +64,7 @@ module.exports = function(grunt) {
 			server: {
 				options: {
 					port: 9005,
-					base: 'app',
+					base: 'public',
 					hostname: '*',
 					livereload:true
 				}
