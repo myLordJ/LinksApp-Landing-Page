@@ -932,6 +932,12 @@ footer .rights span {
 footer .rights a {
   color: #FFFFFF;
 }
+footer #thanks h2 {
+  font-weight: bold;
+}
+footer .hide {
+  display: none;
+}
 
 .form-control {
   -webkit-border-radius: 0px;

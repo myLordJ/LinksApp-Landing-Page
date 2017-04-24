@@ -106,12 +106,38 @@ var appMaster = {
     }, 
     formValidate: function() {
         (function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);
-    }
+    }, 
+    submitForm: function() {
+        var submit = $("#submit"), contactForm = $("#form"), thanks = $("#thanks");
+        var contactsRef = firebase.database().ref("contacts")
+        submit.click(function(e) {
+            appMaster.addContact(contactsRef, $('#name').val(), $('#email').val())
+            contactForm.fadeOut()
+            thanks.removeClass('hide')
+            thanks.fadeIn()
+            e.preventDefault();
+        })
+  },
+  addContact: function(ref, name, email) {
+    ref.child(name + appMaster.randomChars()).set({
+        username: name,
+        email: email
+    });
+  }, 
+  randomChars: function() {
+      var str = "abcdefghijklmnopqrstuvwxyz0123456789"
+      var arr = str.split("")
+      var generatedStr = []
+      for (var i = 0; i < 6 ; i++) {
+          var newStr = arr[Math.floor((Math.random() * arr.length))]
+          console.log(newStr)
+          generatedStr.push(newStr)
+      }
+     return "-"+generatedStr.join("")
+  }
 };
 
-
-$(document).ready(function() {
-
+$(document).ready(function() {  
     appMaster.smoothScroll();
     appMaster.animateScript();
     appMaster.navSpy();
@@ -120,6 +146,5 @@ $(document).ready(function() {
     appMaster.owlCarousel();
     appMaster.year();
     appMaster.brand();
-    //appMaster.formValidate();
-
+    appMaster.submitForm();
 });

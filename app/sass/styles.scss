@@ -1059,6 +1059,15 @@ footer{
 			color:$white-color;
 		}
 	}
+
+	#thanks {
+		h2 {
+			font-weight:bold;
+		}	
+	}
+	.hide{
+		display: none;
+	}
 }
 
 .form-control{
